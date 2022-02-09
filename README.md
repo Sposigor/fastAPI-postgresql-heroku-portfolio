@@ -1,0 +1,1 @@
+fastAPI+postgresql+heroku+portfolio
