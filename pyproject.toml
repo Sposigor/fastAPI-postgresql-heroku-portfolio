@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "novo_projeto_portfolio"
+version = "0.1.0"
+description = ""
+authors = ["Igor Esposito <sposigor@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.73.0"
+pydantic = "^1.9.0"
+Jinja2 = "^3.0.3"
+uvicorn = "^0.17.4"
+python-multipart = "^0.0.5"
+SQLAlchemy = "^1.4.31"
+asyncpg = "^0.25.0"
+psycopg2-binary = "^2.9.3"
+pylint = "^2.12.2"
+gunicorn = "^20.1.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

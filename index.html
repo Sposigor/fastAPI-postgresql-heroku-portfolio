@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!-- Tags requeridas -->
+        <meta charset="utf-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        <meta name="google-site-verification" content="gmmNcIjjivY3XRxPgI_T3xY1ofgLCG1RcY8PIkR3_ww" />
+        />
+        <link rel="icon" href="static/img/favicon.ico" type="image/png" />
+        <title>Igor Esposito</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="static/css/bootstrap.css" />
+        <link rel="stylesheet" href="static/vendors/owl-carousel/owl.carousel.min.css" />
+        <link rel="stylesheet" href="static/vendors/nice-select/css/nice-select.css" />
+        <link rel="stylesheet" href="static/vendors/owl-carousel/assets/owl.carousel.css" />
+        <!-- main css -->
+        <link rel="stylesheet" href="static/css/style.css" />
+        <script
+        src="https://kit.fontawesome.com/cacb60c650.js"
+        crossorigin="anonymous"
+      ></script>
+    </head>
+
+    <body>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+
+    <!--================ Header =================-->
+    <header class="header_area">
+      <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand" href="index.html"
+              ><img src="static/img/logo.svg" width="80px" alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Lista de acessos e caminhos -->
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav justify-content-end">
+                <li class="nav-item active">
+                  <a class="nav-link" href="./">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#abt-me">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact-me">Contato</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!--================ Header =================-->
+
+    <!--================ Inicio Projetos =================-->
+    <section class="section_gap portfolio_area" id="work">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="main-title">
+              <h1>Igor Esposito</h1>
+              <p>
+                Bem-vindo a minha coleção de projetos, curiosidade e desafios que me proponho.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="projects_fillter">
+              <ul class="filter list ">
+                <li class="active" data-filter="*">Todas as Categorias</li>
+                <li data-filter=".vis">Visualização de dados</li>
+                <li data-filter=".ccode">código criativo</li>
+                <li data-filter=".ml">machine learning</li>
+                <li data-filter=".deep">deep learning</li>
+                <li data-filter=".ia">inteligência artificial</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="projects_inner row grid">
+          <div class="grid-sizer col-sm-6 col-md-3 col-lg-3"></div>
+
+    <!--================ Retorno Dinamico da Pagina =================-->
+
+          {% for projeto in projetos %}
+          <div class="col-lg-3 col-sm-6 col-sm-12 {{projeto.tipo}} grid-item">
+            <div class="projects_item">
+              <img
+                class="img-fluid w-100"
+                src="{{ projeto.imagem_local }}"
+                alt=""
+              />
+              <div class="projects_text">
+                <a
+                  href="{{ projeto.link_referencia }}" target="_blank" rel="noopener noreferrer"
+                >
+                  <h4>{{ projeto.nome_projeto }}</h4>
+                </a>
+                <p>({{ projeto.linguagem_usada_mais_libs }})</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+    <!--================ Retorno Dinamico da Pagina =================-->
+    
+        </div>
+      </div>
+    </section>
+    <!--================ Fim Projetos =================-->
+
+    <!--================ Inicio Sobre =================-->
+    <section class="about-area section_gap gray-bg" id="abt-me">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-lg-4 about-left">
+            <img class="img-fluid w-100" src="static/img/perfil.jpg" alt="" />
+          </div>
+          <div class="col-lg-7 col-md-12 about-right">
+            <div class="main-title text-left">
+              <h1>Sobre mim</h1>
+            </div>
+            <div class="mb-50 wow fadeIn" data-wow-duration=".8s">
+              <p>
+                Atualmente estudo ciência de dados na Universidade Virtual do Estado de São Paulo.
+              </p>
+              <p>
+                Tenho interesse em machine learning, deep learning e inteligência artificial.
+              </p>
+              <p>
+                Me aventuro em diversos projetos, me desafiando a aprender novas tecnologias.
+              </p>
+              <p>
+                Moro em São Paulo, SP - Brasil.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ Fim Sobre =================-->
+
+    <!--================ Inicio Footer =================-->
+    <footer class="footer_area section_gap" id="contact-me">
+      <div class="container">
+        <div class="row footer_inner justify-content-center">
+          <div class="col-lg-6 text-center">
+            <aside class="f_widget social_widget">
+              <div class="f_title">
+                <h4>Trabalhe Comigo</h4>
+              </div>
+              <ul class="list">
+                <li>
+                  <a href="https://twitter.com/sposigor" target="_blank" rel="noopener noreferrer"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://github.com/Sposigor" target="_blank" rel="noopener noreferrer"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://discord.com/channels/@me/286319896382537729" target="_blank" rel="noopener noreferrer"
+                    ><i class="fab fa-discord"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="mailto:sposigor@gmail.com"
+                    ><i class="fas fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </aside>
+            <div class="copyright">
+              <p>
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--================ Fim Footer =================-->
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="static/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="static/vendors/isotope/isotope-min.js"></script>
+    <script src="static/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="static/js/theme.js"></script>
+  </body>
+</html>
